@@ -8,8 +8,8 @@ export default (config: UserConfig) => {
         '@': '/src',
       },
     },
-      server: {
-      allowedHosts: {'dev-admin.seekahost.lk'},
-    },
+    server: {
+    allowedHosts: ['dev-admin.seekahost.lk'],
+  },
   });
 };
