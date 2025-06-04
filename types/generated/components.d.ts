@@ -69,8 +69,6 @@ export interface PostsPostPrimaryDetails extends Struct.ComponentSchema {
         number
       > &
       Schema.Attribute.DefaultTo<5>;
-    tags: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<'plugin::tagsinput.tags'>;
   };
 }
 

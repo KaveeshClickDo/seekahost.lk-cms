@@ -36,10 +36,6 @@
       ],
       "required": true
     },
-    "tags": {
-      "type": "customField",
-      "customField": "plugin::tagsinput.tags"
-    },
     "readTime": {
       "type": "integer",
       "default": 5,
