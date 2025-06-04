@@ -1,1 +1,5 @@
-export default () => ({});
+export default () => ({
+  'tagsinput': {
+    enabled: true,
+  },
+});
