@@ -1,0 +1,54 @@
+{
+  "collectionName": "components_posts_post_primary_details",
+  "info": {
+    "displayName": "Post Primary Details",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "excerpt": {
+      "type": "text",
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "BLOGGING",
+        "BUSINESS",
+        "EDUCATION",
+        "FINANCE",
+        "HOME & LIVING",
+        "INTERVIEW",
+        "LIFESTYLE",
+        "MARKETING",
+        "MOBILE ADVERTISING",
+        "SEO",
+        "TECHNOLOGY",
+        "TRAVELLING"
+      ],
+      "required": true
+    },
+    "tags": {
+      "type": "customField",
+      "customField": "plugin::tagsinput.tags"
+    },
+    "readTime": {
+      "type": "integer",
+      "default": 5,
+      "min": 1
+    },
+    "isDisplayAuthor": {
+      "type": "boolean",
+      "default": true,
+      "required": false
+    }
+  }
+}

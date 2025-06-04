@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_author_author_names",
+  "info": {
+    "displayName": "Author Details",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "authorName": {
+      "type": "string"
+    },
+    "authorImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "authorRole": {
+      "type": "string"
+    },
+    "authorDescription": {
+      "type": "text"
+    }
+  }
+}
