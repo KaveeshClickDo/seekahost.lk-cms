@@ -1,16 +1,13 @@
-
 FROM node:22
 
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-
-RUN npm install
+RUN npm install --only=production
 
 COPY . .
-
 RUN npm run build
 
 EXPOSE 1337
 
-CMD ["npm", "run", "develop"]
+CMD ["npm", "run", "start"]
