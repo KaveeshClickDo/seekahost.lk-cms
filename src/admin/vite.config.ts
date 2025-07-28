@@ -9,7 +9,7 @@ export default (config: UserConfig) => {
       },
     },
     server: {
-    allowedHosts: ['dev-admin.seekahost.lk'],
+    allowedHosts: ['dev-admin.seekahost.co.uk'],
   },
   });
 };
