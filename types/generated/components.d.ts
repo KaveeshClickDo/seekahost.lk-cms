@@ -21,11 +21,10 @@ export interface PostsPostMetaData extends Struct.ComponentSchema {
     displayName: 'Post MetaData';
   };
   attributes: {
-    isFeatured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    isFeatured: Schema.Attribute.Enumeration<['YES', 'NO']> &
+      Schema.Attribute.DefaultTo<'NO'>;
     metaDescription: Schema.Attribute.Text;
-    slug: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique &
+    postTitle: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
@@ -59,8 +58,8 @@ export interface PostsPostPrimaryDetails extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     excerpt: Schema.Attribute.Text & Schema.Attribute.Required;
     featuredImage: Schema.Attribute.Media<'images'>;
-    isDisplayAuthor: Schema.Attribute.Boolean &
-      Schema.Attribute.DefaultTo<true>;
+    isDisplayAuthor: Schema.Attribute.Enumeration<['YES', 'NO']> &
+      Schema.Attribute.DefaultTo<'YES'>;
     readTime: Schema.Attribute.Integer &
       Schema.Attribute.SetMinMax<
         {

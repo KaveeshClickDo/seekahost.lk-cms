@@ -17,15 +17,17 @@
     "metaDescription": {
       "type": "text"
     },
-    "slug": {
+    "postTitle": {
       "type": "string",
-      "required": true,
-      "unique": true,
       "maxLength": 255
     },
     "isFeatured": {
-      "type": "boolean",
-      "default": false
+      "type": "enumeration",
+      "enum": [
+        "YES",
+        "NO"
+      ],
+      "default": "NO"
     }
   }
 }

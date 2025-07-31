@@ -14,11 +14,21 @@
     "title": {
       "type": "string",
       "required": true,
-      "maxLength": 255
+      "maxLength": 255,
+      "unique": false
+    },
+    "postSlug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
     },
     "content": {
-      "type": "blocks",
-      "required": true
+      "type": "customField",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor5.CKEditor"
     },
     "postPrimary": {
       "type": "component",

@@ -42,9 +42,12 @@
       "min": 1
     },
     "isDisplayAuthor": {
-      "type": "boolean",
-      "default": true,
-      "required": false
+      "type": "enumeration",
+      "enum": [
+        "YES",
+        "NO"
+      ],
+      "default": "YES"
     }
   }
 }

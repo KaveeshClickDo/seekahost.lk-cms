@@ -387,7 +387,14 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
   attributes: {
     authorDetails: Schema.Attribute.Component<'author.author-name', false> &
       Schema.Attribute.Required;
-    content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    content: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -401,6 +408,7 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
       false
     > &
       Schema.Attribute.Required;
+    postSlug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
