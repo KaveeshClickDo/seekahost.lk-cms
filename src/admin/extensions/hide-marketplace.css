@@ -1,0 +1,74 @@
+/* Hide Marketplace and Content Type Builder from Strapi Admin Panel */
+ 
+/* Primary selector for marketplace link */
+a[href="/admin/marketplace"],
+a[href*="/marketplace"] {
+  display: none !important;
+}
+ 
+/* Alternative selectors for different Strapi versions */
+[data-testid="marketplace-link"],
+nav a[href*="marketplace"],
+.marketplace-link {
+  display: none !important;
+}
+ 
+/* Hide marketplace menu item by text content */
+nav a:has-text("Marketplace"),
+nav li:has(a[href*="marketplace"]) {
+  display: none !important;
+}
+ 
+/* Hide any element containing marketplace text in navigation */
+nav *[class*="marketplace" i],
+nav *[id*="marketplace" i] {
+  display: none !important;
+}
+ 
+/* Specific targeting for Strapi's navigation structure */
+.c-PJLV .c-PJLV-ijPVXgU-css a[href*="marketplace"] {
+  display: none !important;
+}
+ 
+/* Hide parent li element if it contains marketplace link */
+nav li:has(a[href*="marketplace"]) {
+  display: none !important;
+}
+ 
+/* ===== CONTENT TYPE BUILDER HIDING RULES ===== */
+ 
+/* Hide Content Type Builder */
+a[href="/admin/plugins/content-type-builder"],
+a[href*="/content-type-builder"] {
+  display: none !important;
+}
+ 
+/* Alternative selectors for Content Type Builder */
+[data-testid="content-type-builder-link"],
+nav a[href*="content-type-builder"],
+.content-type-builder-link {
+  display: none !important;
+}
+ 
+/* Hide Content Type Builder by text content */
+nav a:contains("Content-Type Builder"),
+nav a:contains("Content Type Builder"),
+nav li:has(a[href*="content-type-builder"]) {
+  display: none !important;
+}
+ 
+/* Hide any element containing content-type-builder text in navigation */
+nav *[class*="content-type-builder" i],
+nav *[id*="content-type-builder" i] {
+  display: none !important;
+}
+ 
+/* Specific targeting for Strapi's navigation structure - Content Type Builder */
+.c-PJLV .c-PJLV-ijPVXgU-css a[href*="content-type-builder"] {
+  display: none !important;
+}
+ 
+/* Hide parent li element if it contains content-type-builder link */
+nav li:has(a[href*="content-type-builder"]) {
+  display: none !important;
+}

@@ -1,7 +1,7 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
 export interface AuthorAuthorName extends Struct.ComponentSchema {
-  collectionName: 'components_author_author_names';
+  collectionName: 'components_author_author_details';
   info: {
     description: '';
     displayName: 'Author Details';
@@ -39,23 +39,40 @@ export interface PostsPostPrimaryDetails extends Struct.ComponentSchema {
     displayName: 'Post Primary Details';
   };
   attributes: {
-    category: Schema.Attribute.Enumeration<
-      [
-        'BLOGGING',
-        'BUSINESS',
-        'EDUCATION',
-        'FINANCE',
-        'HOME & LIVING',
-        'INTERVIEW',
-        'LIFESTYLE',
-        'MARKETING',
-        'MOBILE ADVERTISING',
-        'SEO',
-        'TECHNOLOGY',
-        'TRAVELLING',
-      ]
-    > &
-      Schema.Attribute.Required;
+    categories: Schema.Attribute.JSON &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        [
+          'AI',
+          'BLOGGING',
+          'BUSINESS',
+          'EDUCATION',
+          'ENTERTAINMENT',
+          'FINANCE',
+          'FOOD',
+          'FREELANCING',
+          'HEALTH',
+          'HOME & LIVING',
+          'HOSTING',
+          'INTERVIEW',
+          'LIFESTYLE',
+          'MARKETING',
+          'MOBILE ADVERTISING',
+          'REMOTE WORK',
+          'SEO',
+          'TECHNOLOGY',
+          'TRAVELLING',
+        ]
+      > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 3;
+          min: 1;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<'[]'>;
     excerpt: Schema.Attribute.Text & Schema.Attribute.Required;
     featuredImage: Schema.Attribute.Media<'images'>;
     isDisplayAuthor: Schema.Attribute.Enumeration<['YES', 'NO']> &
